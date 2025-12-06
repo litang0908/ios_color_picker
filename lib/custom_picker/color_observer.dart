@@ -11,10 +11,10 @@ class ColorController extends ValueNotifier<Color> {
   }
 
   void updateOpacity(double opacity) {
-    value = value.withValues(alpha: opacity);
+    value = value.withAlpha((opacity * 255).toInt());
   }
 
   double get colorAlpha {
-    return value.a;
+    return value.alpha / 255.0;
   }
 }

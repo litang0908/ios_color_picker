@@ -95,7 +95,7 @@ class ThumbPainter extends CustomPainter {
           const Offset(8.0, 14 * 0.4),
           13.5,
           Paint()
-            ..color = hsvColor.toColor().withValues(alpha: 1)
+            ..color = hsvColor.toColor().withAlpha(255)
             ..style = PaintingStyle.fill);
     }
   }
@@ -137,10 +137,10 @@ class TrackPainter extends CustomPainter {
     switch (trackType) {
       case TrackType.alpha:
         final List<Color> colors = [
-          if (small) Colors.black.withValues(alpha: 0.8),
+          if (small) Colors.black.withAlpha(204),
           if (small) Colors.transparent,
-          hsvColor.toColor().withValues(alpha: 0.3),
-          hsvColor.toColor().withValues(alpha: 1),
+          hsvColor.toColor().withAlpha(76),
+          hsvColor.toColor().withAlpha(255)
         ];
         Gradient gradient = LinearGradient(colors: colors);
         canvas.drawRect(rect, Paint()..shader = gradient.createShader(rect));
@@ -193,24 +193,24 @@ class TrackPainter extends CustomPainter {
         break;
       case TrackType.red:
         final List<Color> colors = [
-          hsvColor.toColor().withRed(0).withValues(alpha: 1.0),
-          hsvColor.toColor().withRed(255).withValues(alpha: 1.0),
+          hsvColor.toColor().withRed(0).withAlpha(255),
+          hsvColor.toColor().withRed(255).withAlpha(255),
         ];
         Gradient gradient = LinearGradient(colors: colors);
         canvas.drawRect(rect, Paint()..shader = gradient.createShader(rect));
         break;
       case TrackType.green:
         final List<Color> colors = [
-          hsvColor.toColor().withGreen(0).withValues(alpha: 1.0),
-          hsvColor.toColor().withGreen(255).withValues(alpha: 1.0),
+          hsvColor.toColor().withGreen(0).withAlpha(255),
+          hsvColor.toColor().withGreen(255).withAlpha(255),
         ];
         Gradient gradient = LinearGradient(colors: colors);
         canvas.drawRect(rect, Paint()..shader = gradient.createShader(rect));
         break;
       case TrackType.blue:
         final List<Color> colors = [
-          hsvColor.toColor().withBlue(0).withValues(alpha: 1.0),
-          hsvColor.toColor().withBlue(255).withValues(alpha: 1.0),
+          hsvColor.toColor().withBlue(0).withAlpha(255),
+          hsvColor.toColor().withBlue(255).withAlpha(255),
         ];
         Gradient gradient = LinearGradient(colors: colors);
         canvas.drawRect(rect, Paint()..shader = gradient.createShader(rect));

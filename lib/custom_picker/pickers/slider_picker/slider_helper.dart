@@ -78,8 +78,8 @@ class ColorPickerSlider extends StatelessWidget {
           break;
         case TrackType.alpha:
           thumbOffset +=
-              (box.maxWidth - (small ? 16.0 : 30)) * hsvColor.toColor().a;
-          thumbColor = hsvColor.toColor().withValues(alpha: hsvColor.alpha);
+              (box.maxWidth - (small ? 16.0 : 30)) * (hsvColor.toColor().alpha/255.0);
+          thumbColor = hsvColor.toColor().withAlpha((hsvColor.alpha*255).toInt());
 
           break;
         case TrackType.saturation:
@@ -107,16 +107,16 @@ class ColorPickerSlider extends StatelessWidget {
           break;
         case TrackType.red:
           thumbOffset += (box.maxWidth - 30.0) * hsvColor.toColor().red / 0xff;
-          thumbColor = hsvColor.toColor().withValues(alpha: 1.0);
+          thumbColor = hsvColor.toColor().withAlpha(255);
           break;
         case TrackType.green:
           thumbOffset +=
               (box.maxWidth - 30.0) * hsvColor.toColor().green / 0xff;
-          thumbColor = hsvColor.toColor().withValues(alpha: 1.0);
+          thumbColor = hsvColor.toColor().withAlpha(255);
           break;
         case TrackType.blue:
           thumbOffset += (box.maxWidth - 30.0) * hsvColor.toColor().blue / 0xff;
-          thumbColor = hsvColor.toColor().withValues(alpha: 1.0);
+          thumbColor = hsvColor.toColor().withAlpha(255);
           break;
       }
 

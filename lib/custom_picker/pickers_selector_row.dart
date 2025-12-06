@@ -68,7 +68,7 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                               height: 16,
                               width: 1,
                               color: onBackgroundOf(context)
-                                  .withValues(alpha: 0.3))
+                                  .withAlpha(76))
                         else
                           const SizedBox(height: 16, width: 1),
                       ],
@@ -92,13 +92,13 @@ class _PickersSelectorRowState extends State<PickersSelectorRow> {
                       boxShadow: [
                         BoxShadow(
                           color:
-                              onBackgroundOf(context).withValues(alpha: 0.04),
+                              onBackgroundOf(context).withAlpha(10),
                           blurRadius: 1,
                           offset: const Offset(0, 3),
                         ),
                         BoxShadow(
                           color:
-                              onBackgroundOf(context).withValues(alpha: 0.12),
+                              onBackgroundOf(context).withAlpha(30),
                           blurRadius: 8,
                           offset: const Offset(0, 3),
                         ),

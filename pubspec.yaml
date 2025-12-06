@@ -4,21 +4,24 @@ version: 2.0.3+10
 homepage: https://github.com/mokhselim/ios_color_picker
 
 environment:
-  sdk: ^3.6.0
+  sdk: ^3.4.0
   flutter: ">=3.3.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  shared_preferences: ^2.4.0
+  shared_preferences:
+    git:
+      url: "https://gitcode.com/openharmony-sig/flutter_packages.git"
+      path: "packages/shared_preferences/shared_preferences"
   smooth_page_indicator: ^1.2.0+3
   super_tooltip: ^2.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^2.0.3
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.

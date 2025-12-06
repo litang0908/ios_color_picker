@@ -54,10 +54,10 @@ extension ColorExtensions on Color {
   /// Converts a [Color] to a `Map<String, double>`.
   Map<String, double> toMap() {
     return {
-      "red": r,
-      "green": g,
-      "blue": b,
-      "alpha": a,
+      "red": red / 255.0,
+      "green": green / 255.0,
+      "blue": blue / 255.0,
+      "alpha": opacity,
     };
   }
 }

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ios_color_picker/custom_picker/extensions.dart';
 import 'package:ios_color_picker/custom_picker/pickers/slider_picker/slider_helper.dart';
+import 'package:ios_color_picker/l10n/strings.dart';
+
 import '../../shared.dart';
 import '../../utils.dart';
-import 'package:ios_color_picker/l10n/strings.dart';
 
 class SlidePicker extends StatefulWidget {
   const SlidePicker({
@@ -124,7 +125,7 @@ class _SlidePickerState extends State<SlidePicker> {
         color.red.toString(),
         color.green.toString(),
         color.blue.toString(),
-        '${(color.a * 100).round()}',
+        '${((color.alpha / 255.0) * 100).round()}',
       ][pos];
     } else if (widget.colorModel == ColorModel.hsv) {
       return [
@@ -180,7 +181,7 @@ class _SlidePickerState extends State<SlidePicker> {
                       .trackLabel(trackType.toString().split('.').last),
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontSize: 13,
-                      color: onBackgroundOf(context).withValues(alpha: 0.6)),
+                      color: onBackgroundOf(context).withAlpha(153)),
                 ),
               ),
               Expanded(

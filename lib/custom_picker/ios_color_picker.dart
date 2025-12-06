@@ -46,7 +46,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
           width: maxWidth(context),
           height: 340 + componentsHeight(context),
           decoration: BoxDecoration(
-            color: backgroundColorOf(context).withValues(alpha: 0.98),
+            color: backgroundColorOf(context).withAlpha(250),
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(10),
               topLeft: Radius.circular(10),
@@ -122,7 +122,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
                   IcpStrings.of(context).opacity,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontSize: 13,
-                      color: onBackgroundOf(context).withValues(alpha: 0.6)),
+                      color: onBackgroundOf(context).withAlpha(153)),
                 ),
               ),
               Row(
@@ -160,7 +160,7 @@ class _IosColorPickerState extends State<IosColorPicker> {
                     child: ValueListenableBuilder<Color>(
                       valueListenable: colorController,
                       builder: (context, color, child) {
-                        int alpha = (color.a * 100).toInt();
+                        int alpha = (color.opacity * 100).toInt();
                         return Text(
                           "$alpha%",
                           style: Theme.of(context)
