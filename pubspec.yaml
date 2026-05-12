@@ -2,6 +2,7 @@ name: ios_color_picker
 description: "A pure Flutter iOS-style Color Picker for all platforms (Web, Android, iOS, Windows, macOS, Linux). No native iOS component calls."
 version: 2.0.3+10
 homepage: https://github.com/mokhselim/ios_color_picker
+publish_to: none
 
 environment:
   sdk: ^3.4.0
@@ -16,7 +17,7 @@ dependencies:
       url: "https://gitcode.com/openharmony-sig/flutter_packages.git"
       path: "packages/shared_preferences/shared_preferences"
   smooth_page_indicator: ^1.2.0+3
-  super_tooltip: ^2.0.9
+  super_tooltip: ^2.1.1
 
 dev_dependencies:
   flutter_test:

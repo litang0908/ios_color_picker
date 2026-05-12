@@ -147,21 +147,20 @@ class _HistoryColorsState extends State<HistoryColors> {
                       onHide: () {
                         toolTip = -1;
                       },
-                      onLongPress: () {
-                        setState(() {
-                          toolTip = (index + (pageIndex * 10));
-                        });
-                        showTooltip();
-                      },
-                      showBarrier: false,
-                      // showDropBoxFilter: true,
-                      hasShadow: false,
-                      sigmaY: 16,
-                      sigmaX: 16,
-                      arrowLength: 8,
-                      arrowTipDistance: 17,
-                      bubbleDimensions: EdgeInsets.zero,
-                      popupDirection: TooltipDirection.up,
+                      barrierConfig: const BarrierConfiguration(
+                        show: false,
+                      ),
+                      style: const TooltipStyle(
+                        hasShadow: false,
+                        bubbleDimensions: EdgeInsets.zero,
+                      ),
+                      arrowConfig: const ArrowConfiguration(
+                        length: 8,
+                        tipDistance: 17,
+                      ),
+                      positionConfig: const PositionConfiguration(
+                        preferredDirection: TooltipDirection.up,
+                      ),
                       controller: toolTip == (index + (pageIndex * 10))
                           ? _tipController
                           : null,
@@ -190,6 +189,12 @@ class _HistoryColorsState extends State<HistoryColors> {
                           _tipController.hideTooltip();
                           toolTip = -1;
                           setState(() {});
+                        },
+                        onLongPress: () {
+                          setState(() {
+                            toolTip = (index + (pageIndex * 10));
+                          });
+                          showTooltip();
                         },
                         child: Stack(
                           alignment: Alignment.center,
